@@ -1,0 +1,38 @@
+@use '../../../styles/source/colors.scss' as colors;
+@use '../../../styles/source/typography.scss' as typography;
+@use '../../../styles/source/breakpoints.scss' as breakpoints;
+@use '../../../styles/source/mixins.scss' as mixins;
+@use "../../../styles/source/variables.scss" as variables;
+
+.myDataPage {
+    width: 100%;
+
+    h1 {
+        @include mixins.fontSize(2.8);
+        margin: breakpoints.$gutter * 2 0 breakpoints.$gutter * 2;
+    }
+}
+
+.myDataPage__wrapper {
+    display: grid;
+    width: calc(100% - breakpoints.$gutter * 5);
+    grid-template-columns: 30% 70%;
+    gap: breakpoints.$gutter * 5;
+}
+
+.myDataPage__page {
+    max-width: 900px;;
+    padding-right: breakpoints.$gutter * 4;
+}
+
+.myDataRegisterForm {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 16px;
+    margin-top: breakpoints.$gutter * 3;
+
+    > div > label {
+        display: block;
+        padding-right: breakpoints.$gutterAlt * 3;
+    }
+}

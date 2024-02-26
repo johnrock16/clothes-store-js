@@ -1,0 +1,80 @@
+@use '../../styles/source/colors.scss' as colors;
+@use '../../styles/source/typography.scss' as typography;
+@use '../../styles/source/breakpoints.scss' as breakpoints;
+@use '../../styles/source/mixins.scss' as mixins;
+@use "../../styles/source/variables.scss" as variables;
+
+.minicart {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10;
+
+    &[data-active="true"] {
+        display: flex;
+    }
+}
+
+.minicart__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.minicart__iconClose {
+
+    @include mixins.fontSize(4.0);
+}
+
+.minicart__wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 30%;
+    height: 100%;
+    padding: 0 breakpoints.$gutter * 4;
+    background-color: colors.$white;
+    z-index: 10;
+}
+
+.minicart__body {
+    overflow-y: auto;
+}
+
+.minicart__title {
+    display: block;
+    margin: breakpoints.$gutter * 4 0;
+    @include mixins.fontSize(2.4);
+    font-weight: typography.$semiBold;
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    gap: breakpoints.$gutter * 3;
+}
+
+.minicart__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: breakpoints.$gutter * 3 0 breakpoints.$gutter * 2;
+    gap: breakpoints.$gutter;
+    border-top: 1px solid #f4f4f4;
+
+    > button {
+        @include mixins.fontSize(1.6);
+
+        &:last-child {
+            @include mixins.fontSize(1.6);
+            font-weight: typography.$lightAlternative;
+            padding-bottom: 2px;
+        }
+    }
+}
+

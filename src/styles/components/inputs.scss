@@ -1,0 +1,32 @@
+input, select, textarea {
+    width: calc(100% - $gutter - $borderRadius);
+    padding: $gutter;
+    @include fontSize(1.6);
+    background-color: $white;
+    border: 1px solid $black;
+    border-radius: $borderRadius;
+}
+
+label {
+    @include fontSize(1.6);
+
+    input,
+    textarea {
+        margin-top: $gutter * 1;
+    }
+}
+
+textarea {
+    min-height: 200px;
+}
+
+.input {
+    &--transparent {
+        background-color: transparent;
+        border: 1px solid $white;
+    }
+}
+
+label.required::after {
+    content: " *";
+}

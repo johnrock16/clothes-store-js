@@ -1,0 +1,40 @@
+@use '../../styles/source/colors.scss' as colors;
+@use '../../styles/source/typography.scss' as typography;
+@use '../../styles/source/breakpoints.scss' as breakpoints;
+@use '../../styles/source/mixins.scss' as mixins;
+@use '../../styles/source/variables.scss' as variables;
+
+.cart__wrapper {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    width: calc(100% - breakpoints.$gutter * 5);
+    gap: breakpoints.$gutter * 5;
+    margin-top: breakpoints.$gutter * 4;
+}
+
+.cart__products {
+    display: flex;
+    flex-direction: column;
+    gap: breakpoints.$gutter * 2;
+}
+
+.cart__box {
+    height: fit-content;
+    padding: breakpoints.$gutter * 3 breakpoints.$gutter * 4;
+    border: 1px solid;
+    border-radius: variables.$borderRadius;
+
+    > span {
+        @include mixins.fontSize(1.4);
+    }
+
+    > button {
+        @include mixins.fontSize(1.6);
+    }
+}
+
+.cart__priceTotal {
+    display: block;
+    margin: breakpoints.$gutter * 2 0 breakpoints.$gutter;
+    @include mixins.fontSize(1.6);
+}

@@ -1,0 +1,36 @@
+@use '../../styles/source/colors.scss' as colors;
+@use '../../styles/source/typography.scss' as typography;
+@use '../../styles/source/breakpoints.scss' as breakpoints;
+@use '../../styles/source/mixins.scss' as mixins;
+@use "../../styles/source/variables.scss" as variables;
+
+.productTile {
+    img {
+        margin-bottom: breakpoints.$gutter * 3;
+        border-radius: variables.$borderRadius;
+    }
+
+    h3 {
+        margin-bottom: breakpoints.$gutterAlt;
+        @include mixins.fontSize(2.0);
+    }
+
+    a {
+        color: colors.$black;
+        text-decoration: none;
+    }
+
+    p {
+        margin-bottom: breakpoints.$gutter;
+        @include mixins.fontSize(1.4);
+    }
+}
+
+.productTIle__wrapper {
+    margin: 0 breakpoints.$gutter;
+}
+
+.productTile__price {
+    @include mixins.fontSize(1.6);
+    font-weight: typography.$lightAlternative;
+}

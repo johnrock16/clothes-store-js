@@ -1,0 +1,108 @@
+@use '../../styles/source/colors.scss' as colors;
+@use '../../styles/source/typography.scss' as typography;
+@use '../../styles/source/breakpoints.scss' as breakpoints;
+@use '../../styles/source/mixins.scss' as mixins;
+
+.header {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: breakpoints.$gutter * 3 breakpoints.$gutter * 4 0;
+}
+
+.header__title {
+    padding-right: breakpoints.$gutter * 3;
+    @include mixins.fontSize(3.2);
+    font-weight: typography.$medium;
+    color: colors.$black;
+    text-decoration: none;
+}
+
+.header__icons {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: breakpoints.$gutter * 3;
+
+    svg {
+        color: colors.$black;
+    }
+}
+
+.navigation__list {
+    display: flex;
+    width: 100%;
+    list-style: none;
+}
+
+.navigation__item {
+    padding: breakpoints.$gutter breakpoints.$gutter * 3 breakpoints.$gutter * 4 breakpoints.$gutter * 3;
+    @include mixins.fontSize(1.8);
+    font-weight: typography.$lightAlternative;
+
+    a {
+        padding-bottom: breakpoints.$gutterAlt;
+        border-bottom: 1px solid colors.$white;
+        white-space: nowrap;
+        color: colors.$black;
+        text-decoration: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &:hover {
+        span {
+            border-color: colors.$black;
+        }
+
+        .menuCategory {
+            display: block;
+        }
+    }
+}
+
+.menuCategory {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    width: calc(100% - breakpoints.$gutter * 10);
+    padding: breakpoints.$gutter * 2 breakpoints.$gutter * 5 breakpoints.$gutter * 5 breakpoints.$gutter * 5;
+    background-color: colors.$white;
+    z-index: 10;
+}
+
+.category {
+    display: flex;
+    width: 100%;
+    margin-right: breakpoints.$gutter * 2;
+    gap: breakpoints.$gutter * 5;
+}
+
+.category__list {
+    display: flex;
+    flex-direction: column;
+    gap: breakpoints.$gutter;
+    list-style: none;
+}
+
+.category__item {
+    width: fit-content;
+    @include mixins.fontSize(1.6);
+    padding-bottom: breakpoints.$gutterAlt;
+    border-bottom: 1px solid colors.$white;
+
+    &:hover {
+        border-color: colors.$black;
+        cursor: pointer;
+    }
+
+    &:first-child {
+        font-weight: typography.$semiBold;
+        padding-bottom: breakpoints.$gutter * 2;
+        border-color: colors.$white;
+        cursor: default;
+    }
+}

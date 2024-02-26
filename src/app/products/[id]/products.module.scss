@@ -1,0 +1,176 @@
+@use '../../../styles/source/colors.scss' as colors;
+@use '../../../styles/source/typography.scss' as typography;
+@use '../../../styles/source/breakpoints.scss' as breakpoints;
+@use '../../../styles/source/mixins.scss' as mixins;
+@use '../../../styles/source/variables.scss' as variables;
+
+.productPage {
+    padding: breakpoints.$gutter * 5;
+}
+
+.productPage__top {
+    display: grid;
+    width: calc(100% - breakpoints.$gutter * 5);
+    grid-template-columns: 60% 40%;
+    gap: breakpoints.$gutter * 5;
+}
+
+.productPage__images {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: breakpoints.$gutterAlt * 3;
+
+    img {
+        height: 100%
+    }
+}
+
+.productPage__content {
+    h1 {
+        @include mixins.fontSize(3.2);
+        margin-bottom: breakpoints.$gutter;
+    }
+}
+
+.productPage__contentSection {
+    margin: breakpoints.$gutter * 3 0 ;
+
+    > span {
+        display: block;
+        margin-bottom: breakpoints.$gutter * 2;
+        @include mixins.fontSize(1.6);
+        font-weight: typography.$semiBold;
+    }
+}
+
+.productPage__colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: breakpoints.$gutter;
+}
+
+.productPage__color {
+    width: 32px;
+    height: 32px;
+    background-color: darkred;
+    border: 1px solid;
+    border-radius: 50%;
+}
+
+.productPage__sizes {
+    display: flex;
+    flex-direction: wrap;
+    gap: breakpoints.$gutter;
+}
+
+.productPage__size {
+    padding: breakpoints.$gutterAlt * 3;
+    @include mixins.fontSize(1.4);
+    font-weight: typography.$semiBold;
+    color: colors.$white;
+    background-color: colors.$black;
+    border-radius: variables.$borderRadius;
+
+    &:hover {
+        color: colors.$black;
+        background-color: colors.$white;
+    }
+}
+
+.productPage__price {
+    display: block;
+    @include mixins.fontSize(2.0);
+    font-weight: typography.$lightAlternative;
+}
+
+.productPage__quantity {
+    label {
+        display: block;
+        @include mixins.fontSize(1.6);
+        font-weight: typography.$semiBold;
+    }
+}
+
+.productPage__description {
+    margin-top: breakpoints.$gutter * 4;
+
+    p, li, span {
+        @include mixins.fontSize(1.6);
+    }
+
+    p, span, ul {
+        margin: breakpoints.$gutter * 2 0;
+    }
+
+    ul {
+        padding-left: breakpoints.$gutter * 5;
+    }
+}
+
+.reviewArea {
+    padding: breakpoints.$gutter * 5 0;
+}
+
+.reviews {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: breakpoints.$gutter * 5;
+}
+
+.review__stars {
+    display: flex;
+    gap: breakpoints.$gutterAlt;
+    margin-bottom: breakpoints.$gutter;
+}
+
+.review__star {
+    @include mixins.fontSize(1.6);
+}
+
+.review__reviewer {
+    display: block;
+    margin-bottom: breakpoints.$gutter;
+    @include mixins.fontSize(1.6);
+    font-weight: typography.$semiBold;
+}
+
+.review__title {
+    display: block;
+    margin-bottom: breakpoints.$gutter * 2;
+    @include mixins.fontSize(1.6);
+    font-weight: typography.$semiBold;
+}
+
+.review__description {
+    @include mixins.fontSize(1.4);
+}
+
+.review__footer {
+    display: flex;
+    align-items: flex-end;
+    gap: breakpoints.$gutter * 3;
+    margin-top: breakpoints.$gutter * 2;
+    @include mixins.fontSize(1.4);
+
+    span {
+        display: block;
+    }
+}
+
+.review__buttonLikeOpinion {
+    display: flex;
+    align-items: flex-end;
+    @include mixins.fontSize(1.4);
+
+    > button {
+        padding: 0;
+        margin-right: breakpoints.$gutterAlt;
+        background: none;
+        border: none;
+
+        svg {
+            color: colors.$black;
+            @include mixins.fontSize(1.4);
+        }
+    }
+}

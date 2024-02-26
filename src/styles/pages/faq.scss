@@ -1,0 +1,28 @@
+@import "../source/core.scss";
+
+.cr-faqList {
+    margin: 0 $gutter * 2;
+}
+
+.cr-faqItem {
+    details {
+        padding: $gutter * 3 $gutter * 2 $gutter;
+        border: 1px solid;
+        margin-bottom: $gutter * 4;
+        background-color: #e7e9eb;
+        border-radius: 12px;
+    }
+
+    summary {
+        margin-bottom: $gutter * 2;
+        font-size: 2.4rem;
+        font-weight: $bold;
+        list-style: none;
+        cursor: pointer;
+    }
+
+    p {
+        font-size: 1.6rem;
+        padding-bottom: $gutter * 3;;
+    }
+}

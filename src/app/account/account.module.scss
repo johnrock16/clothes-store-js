@@ -1,0 +1,37 @@
+@use '../../styles/source/colors.scss' as colors;
+@use '../../styles/source/typography.scss' as typography;
+@use '../../styles/source/breakpoints.scss' as breakpoints;
+@use '../../styles/source/mixins.scss' as mixins;
+@use '../../styles/source/variables.scss' as variables;
+
+.accountPage {
+    width: 100%;
+
+    h1 {
+        @include mixins.fontSize(2.8);
+        margin: breakpoints.$gutter * 2 0 breakpoints.$gutter * 2;
+    }
+}
+
+.accountPage__wrapper {
+    display: grid;
+    width: calc(100% - breakpoints.$gutter * 5);
+    grid-template-columns: 30% 70%;
+    gap: breakpoints.$gutter * 5;
+}
+
+.accountPage__page {
+    max-width: 900px;;
+    padding-right: breakpoints.$gutter * 4;
+}
+
+.accountPage__ordersLast {
+    display: flex;
+    flex-direction: column;
+    gap: breakpoints.$gutterAlt;
+    margin-bottom: breakpoints.$gutter * 2;
+
+    span {
+        @include mixins.fontSize(1.6);
+    }
+}

@@ -1,0 +1,46 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: $gutter * 2;
+    @include fontSize(2.0);
+    font-weight: $bold;
+    border: 1px solid $black;
+    cursor: pointer;
+
+    &--primary {
+        color: $white;
+        background-color: $black;
+    }
+
+    &--secondary {
+        border: none;
+        color: $black;
+        background-color: $secondary;
+    }
+
+    &--transparent {
+        padding: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    &--icon {
+        width: auto;
+        padding: 0;
+        @include fontSize(3.2);
+        background: none;
+        border: none;
+    }
+
+    &--text {
+        padding: $gutter 0 2px;
+        width: fit-content;
+        color: $black;
+        background: none;
+        border: none;
+        border-bottom: 1px solid;
+    }
+}

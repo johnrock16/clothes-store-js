@@ -1,0 +1,51 @@
+@use '../../../styles/source/colors.scss' as colors;
+@use '../../../styles/source/typography.scss' as typography;
+@use '../../../styles/source/breakpoints.scss' as breakpoints;
+@use '../../../styles/source/mixins.scss' as mixins;
+@use "../../../styles/source/variables.scss" as variables;
+
+.registerPage {
+    h1 {
+        text-align: left;
+        margin-bottom: breakpoints.$gutter * 4;
+    }
+
+    > div {
+        display: grid;
+        grid-template-columns: 50% 1fr;
+        gap: breakpoints.$gutter * 5;
+    }
+}
+
+.registerPage__content {
+    margin-top: breakpoints.$gutter * 4;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    gap: breakpoints.$gutter * 2;
+    margin-top: breakpoints.$gutter * 4;
+}
+
+.form__field {
+    label {
+        font-weight: typography.$lightAlternative;
+    }
+}
+
+.form__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: breakpoints.$gutter * 2;
+
+    a {
+        @include mixins.fontSize(1.6);
+        font-weight: typography.$lightAlternative;
+        text-decoration: none;
+        color: colors.$black;
+    }
+}

@@ -1,0 +1,55 @@
+@use '../../styles/source/colors.scss' as colors;
+@use '../../styles/source/typography.scss' as typography;
+@use '../../styles/source/breakpoints.scss' as breakpoints;
+@use '../../styles/source/mixins.scss' as mixins;
+@use "../../styles/source/variables.scss" as variables;
+
+.product {
+    &:last-child {
+        .product__footer {
+            border: none;
+        }
+    }
+}
+
+.product__body {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    height: 100%;
+    gap: breakpoints.$gutter * 3;
+    @include mixins.fontSize(1.4);
+}
+
+.product__title {
+    display: block;
+    margin-bottom: breakpoints.$gutterAlt * 3;
+    @include mixins.fontSize(2.4);
+    font-weight: typography.$semiBold;
+    color: colors.$black;
+    text-decoration: none;
+}
+
+.product__details {
+    display: flex;
+    flex-direction: column;
+    gap: breakpoints.$gutterAlt;
+}
+
+.product__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: breakpoints.$gutter * 2 0;
+    gap: breakpoints.$gutterAlt;
+    @include mixins.fontSize(1.4);
+    border-bottom: 1px solid #f4f4f4;
+
+    strong {
+        @include mixins.fontSize(1.4);
+    }
+}
+
+.product__price {
+    @include mixins.fontSize(1.6);
+    font-weight: typography.$semiBold;
+}

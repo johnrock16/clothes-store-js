@@ -1,0 +1,26 @@
+@import "../source/core.scss";
+
+.cr-socialMedia__wrapper {
+    position: relative;
+}
+
+.cr-socialMedia__seeOn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding: $gutter;
+    gap: $gutter;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    .icon {
+        font-size: 3.2rem;
+        color: rgb(226, 19, 19);
+    }
+
+    span {
+        font-size: 2.0rem;
+        font-weight: $lightAlternative;
+    }
+}

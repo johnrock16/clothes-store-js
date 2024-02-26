@@ -1,0 +1,44 @@
+@use '../../styles/source/colors.scss' as colors;
+@use '../../styles/source/typography.scss' as typography;
+@use '../../styles/source/breakpoints.scss' as breakpoints;
+@use '../../styles/source/mixins.scss' as mixins;
+@use "../../styles/source/variables.scss" as variables;
+
+.inputCounter {
+    display: flex;
+    margin-top: breakpoints.$gutter * 2;
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include mixins.fontSize(2.4);
+        font-weight: typography.$semiBold;
+        color: colors.$white;
+        background: colors.$black;
+        border: none;
+        padding: breakpoints.$gutterAlt;
+
+        &:first-child {
+            border-top-left-radius: variables.$borderRadius;
+            border-bottom-left-radius: variables.$borderRadius;
+        }
+
+        &:last-child {
+            border-top-right-radius: variables.$borderRadius;
+            border-bottom-right-radius: variables.$borderRadius;
+        }
+    }
+
+    input {
+        padding: breakpoints.$gutter 0;
+        @include mixins.fontSize(1.4);
+        font-weight: typography.$semiBold;
+        width: auto;
+        max-width: 40px;
+        text-align: center;
+        border: none;
+        background-color: #f7f7f7;
+        border-radius: 0;
+    }
+}

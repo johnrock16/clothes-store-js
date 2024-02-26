@@ -1,0 +1,128 @@
+.row {
+    display: flex;
+}
+
+.col-1 {
+    width: 100%;
+    max-width: 8.33%;
+}
+
+.col-2 {
+    width: 100%;
+    max-width: 16.66%;
+}
+
+.col-3 {
+    width: 100%;
+    max-width: 25%;
+}
+
+.col-4 {
+    width: 100%;
+    max-width: 33.33%;
+}
+
+.col-4 {
+    width: 100%;
+    max-width: 33.33%;
+}
+
+.col-5 {
+    width: 100%;
+    max-width: 41.66%;
+}
+
+.col-6 {
+    width: 100%;
+    max-width: 50%;
+}
+
+.col-7 {
+    width: 100%;
+    max-width: 58.33%;
+}
+
+.col-8 {
+    width: 100%;
+    max-width: 66.66%;
+}
+
+.col-9 {
+    width: 100%;
+    max-width: 75%;
+}
+
+.col-10 {
+    width: 100%;
+    max-width: 83.33%;
+}
+
+.col-11 {
+    width: 100%;
+    max-width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+    max-width: 100%;
+}
+
+.row {
+    display: flex;
+}
+
+.gap-1 {
+    gap: $gutter;
+}
+
+.gap-2 {
+    gap: $gutter * 2;
+}
+
+.gap-3 {
+    gap: $gutter * 3;
+}
+
+.gap-4 {
+    gap: $gutter * 4;
+}
+
+.gap-5 {
+    gap: $gutter * 5;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.mt-1 {
+    margin-top: $gutter;
+}
+
+.mt-2 {
+    margin-top: $gutter * 2;
+}
+
+.mt-3 {
+    margin-top: $gutter * 3;
+}
+
+.mt-4 {
+    margin-top: $gutter * 4;
+}
+
+.mt-5 {
+    margin-top: $gutter * 5;
+}
+
+.mb-4 {
+    margin-bottom: $gutter * 4;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.w-100 {
+    width: 100%;
+}

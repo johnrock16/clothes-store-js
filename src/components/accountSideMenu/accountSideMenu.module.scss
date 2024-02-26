@@ -1,0 +1,32 @@
+@use '../../styles/source/colors.scss' as colors;
+@use '../../styles/source/typography.scss' as typography;
+@use '../../styles/source/breakpoints.scss' as breakpoints;
+@use '../../styles/source/mixins.scss' as mixins;
+@use '../../styles/source/variables.scss' as variables;
+
+.accountSideMenu {
+    ul {
+        display: flex;
+        flex-direction: column;
+        padding: breakpoints.$gutter * 3 breakpoints.$gutter * 3 240px 0;
+        gap: breakpoints.$gutter * 2;
+        @include mixins.fontSize(1.6);
+        list-style: none;
+        align-items: flex-end;
+        background-color: #f4f4f4;
+        border-bottom-right-radius: variables.$borderRadius;
+    }
+
+    li[data-active="true"] {
+        font-weight: typography.$semiBold;
+    }
+
+    a {
+        color: colors.$black;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

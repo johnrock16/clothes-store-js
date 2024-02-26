@@ -1,0 +1,61 @@
+@use '../../../styles/source/colors.scss' as colors;
+@use '../../../styles/source/typography.scss' as typography;
+@use '../../../styles/source/breakpoints.scss' as breakpoints;
+@use '../../../styles/source/mixins.scss' as mixins;
+@use '../../../styles/source/variables.scss' as variables;
+
+
+.ordersPage {
+    width: 100%;
+
+    h1 {
+        @include mixins.fontSize(2.8);
+        margin: breakpoints.$gutter * 2 0 breakpoints.$gutter * 2;
+    }
+}
+
+.ordersPage__wrapper {
+    display: grid;
+    width: calc(100% - breakpoints.$gutter * 5);
+    grid-template-columns: 30% 70%;
+    gap: breakpoints.$gutter * 5;
+}
+
+.ordersPage__page {
+    max-width: 900px;
+    padding-right: breakpoints.$gutter * 4;
+}
+
+.ordersPage__orders {
+    display: flex;
+    flex-direction: column;
+    margin: breakpoints.$gutter * 4;
+    gap: breakpoints.$gutter * 5;
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+    padding: breakpoints.$gutter * 4 breakpoints.$gutter * 3;
+    background-color: #f4f4f4;
+    border-radius: variables.$borderRadius;
+}
+
+.order__header {
+    padding-bottom: breakpoints.$gutter;
+    margin-bottom: breakpoints.$gutter * 2;
+    @include mixins.fontSize(2.0);
+    font-weight: typography.$semiBold;
+    text-align: center;
+    border-bottom: 1px solid;
+}
+
+.order__body {
+    display: flex;
+    flex-direction: column;
+
+    span {
+        @include mixins.fontSize(1.6);
+        margin-bottom: breakpoints.$gutterAlt;
+    }
+}
